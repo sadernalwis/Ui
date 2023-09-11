@@ -28,7 +28,8 @@ export const renderLoggedIn = (
   (document.getElementById("whoamiButton") as HTMLButtonElement).onclick =
     async () => {
       try {
-        const response = await actor.whoami();
+        // const response = await actor.whoami();
+        const response = await actor.get_principal();
         (document.getElementById("whoami") as HTMLInputElement).value =
           response.toString();
       } catch (error) {

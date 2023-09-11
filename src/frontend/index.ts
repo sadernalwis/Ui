@@ -1,6 +1,7 @@
 import { AuthClient } from "@dfinity/auth-client";
 import { handleAuthenticated, renderIndex } from "./views";
-
+console.log(process.env.NODE_ENV)
+console.log(process.env.__CANISTERS__)
 // One day in nanoseconds
 const days = BigInt(1);
 const hours = BigInt(24);
