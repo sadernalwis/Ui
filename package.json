@@ -3,30 +3,18 @@
   "version": "0.1.0",
   "description": "Internet Computer starter application",
   "private": "true",
-  "keywords": [
-    "Internet Computer",
-    "Motoko",
-    "JavaScript",
-    "Canister"
-  ],
+  "keywords": [ "Internet Computer", "Rust", "JavaScript", "Canister" ],
   "scripts": {
-    "build": "vite build src/auth_client_demo_assets/vanilla --config vite.config.js",
+    "build": "vite build src/frontend --config vite.config.js",
     "prebuild": "npm run generate",
-    "start": "vite src/auth_client_demo_assets/vanilla --config vite.config.js",
+    "start": "vite src/frontend --config vite.config.js",
     "start:dfx": "dfx start --background --clean --host \"127.0.0.1:4943\"",
-    "start:react": "vite src/auth_client_demo_assets/react --config vite.config.react.js",
-    "build:react": "vite build src/auth_client_demo_assets/react --config vite.config.react.js",
-    "start:vue": "vite src/auth_client_demo_assets/vue --config vite.config.vue.js",
-    "build:vue": "vite build src/auth_client_demo_assets/vue --config vite.config.vue.js",
-    "prestart:svelte": "cp .env src/auth_client_demo_assets/svelte/.env",
-    "start:svelte": "cd src/auth_client_demo_assets/svelte && npm run dev",
     "prestart": "npm run generate",
     "release": "node release.mjs",
-    "generate": "dfx generate whoami"
+    "generate": "scripts/build_did.sh && dfx generate backend"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
-    "@vue/cli-plugin-babel": "^5.0.8",
     "assert": "2.0.0",
     "buffer": "6.0.3",
     "dotenv": "^16.0.3",
@@ -51,8 +39,6 @@
     "@dfinity/principal": "^0.15.6",
     "lit-html": "^2.4.0",
     "pinia": "^2.0.36",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.4"
   }

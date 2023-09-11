@@ -14,6 +14,7 @@ To get started, start a local dfx development environment in this directory with
 
 ```bash
 cd auth-client-demo/
+npm install
 dfx start --background --clean
 dfx deps deploy
 dfx deploy

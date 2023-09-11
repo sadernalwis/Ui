@@ -1,0 +1,17 @@
+[package]
+name = "backend"
+version = "0.1.0"
+authors = ["rbelov <3cL1p5e7@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+# path = "src/lib.rs"
+
+[dependencies]
+candid = "0.9.6"
+ic-cdk = "0.10.0"
+ic-cdk-macros = "0.7.1"
+ic-types = "0.7.0"
+serde = "1.0.188"
+serde_bytes = "0.11.12"

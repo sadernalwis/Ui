@@ -1,0 +1,19 @@
+type HttpRequest = record {
+  url : text;
+  method : text;
+  body : vec nat8;
+  headers : vec record { text; text };
+};
+type HttpResponse = record {
+  body : vec nat8;
+  headers : vec record { text; text };
+  status_code : nat16;
+};
+service : () -> {
+  echo : (text) -> (text) query;
+  get_canister_principal : () -> (principal) query;
+  get_principal : () -> (principal) query;
+  greet : (text) -> (text) query;
+  http_request : (HttpRequest) -> (HttpResponse) query;
+  whoami : () -> (principal) query;
+}
