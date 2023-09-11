@@ -54,4 +54,12 @@ dfx deps init --argument '(null)' internet-identity
 dfx deps deploy
 ```
 
+```
+git push --set-upstream origin main --force
+git commit -am "changing and deleting files"
+git add -A stages All (include new files, modified and deleted)
+git add . stages new and modified, without deleted
+git add -u stages modified and deleted, without new
+```
+
 
